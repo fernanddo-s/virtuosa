@@ -65,7 +65,7 @@ export default {
 }
 
 .description{
-  margin: 0 20px 0 20px;
+  margin: 0 20px 20px 20px;
 }
 
 .logo {
