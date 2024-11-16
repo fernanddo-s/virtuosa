@@ -3,7 +3,7 @@
   <div class="landing-page">
     <header>
       <!-- Logo da Loja -->
-      <img src="@/assets/vt.png" alt="Logo da Loja" class="logo" />
+      <img src="@/assets/logo-vt.png" alt="Logo da Loja" class="logo" />
     </header>
 
     <section class="info-section">
