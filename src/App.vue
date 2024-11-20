@@ -9,9 +9,10 @@
     <section class="info-section">
       <h1>{{ lojaNome }}</h1>
       <p class="description">{{ descricaoLoja }}</p>
-      <p>🌻 Especialista em T-shirts</p>
-      <p>📍Lagoa do Carneiro - Acaraú</p> 
-      <p>✨ Trabalhamos com Cosméticos</p>
+      <p>🌻 Tudo o que uma mulher precisa em um só lugar!</p>
+      <p>📍 Rua Horácio Oliveira, 107 - Lagoa do Carneiro</p>
+      <p>🌟 Beleza Feminina, Cuidado e Estilo</p>
+      <br>
       <p>{{ contatoLoja }}</p>
 
       <!-- Links para Redes Sociais -->
