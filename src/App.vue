@@ -1,8 +1,9 @@
 <template>
-
-  <div class="landing-page">
+  <div :class="['landing-page', { 'dark-mode': isDarkMode }]">
     <header>
-      <!-- Logo da Loja -->
+      <button @click="toggleDarkMode" class="toggle-button">
+        {{ isDarkMode ? '☀️ Claro' : '🌙 Escuro' }}
+      </button>
       <img src="@/assets/logo-vt.png" alt="Logo da Loja" class="logo" />
     </header>
 
@@ -12,7 +13,7 @@
       <p>🌻 Tudo o que uma mulher precisa em um só lugar!</p>
       <p>📍 Rua Horácio Oliveira, 107 - Lagoa do Carneiro</p>
       <p>🌟 Beleza Feminina, Cuidado e Estilo</p>
-      <br>
+      <br />
       <p>{{ contatoLoja }}</p>
 
       <!-- Links para Redes Sociais -->
@@ -35,25 +36,29 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      lojaNome: 'Virtuosa',
-      descricaoLoja:
-        'Bem-vindos à Virtuosa! Oferecemos produtos de alta qualidade diretamente para você. ',
-      contatoLoja: 'Entre em contato:',
-      socialLinks: {
-        instagram: 'https://www.instagram.com/virtuosa_bf/',
-        whatsapp: 'https://wa.me/558899516865',
-      }
-    }
-  }
-}
+
+<script setup>
+import { ref } from 'vue';
+
+const lojaNome = 'Virtuosa';
+const descricaoLoja = 'Bem-vindos à Virtuosa! Oferecemos produtos de alta qualidade diretamente para você.';
+const contatoLoja = 'Entre em contato:';
+const socialLinks = {
+  instagram: 'https://www.instagram.com/virtuosa_bf/',
+  whatsapp: 'https://wa.me/558899516865',
+};
+
+const isDarkMode = ref(false);
+
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value;
+};
 </script>
 
+
+
 <style scoped>
-/* Estilo para centralizar a página e dar uma boa apresentação */
+/* Estilo padrão (modo claro) */
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -63,9 +68,10 @@ export default {
   height: 100vh;
   background-color: #f4f4f4;
   font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
-.description{
+.description {
   margin: 0 20px 20px 20px;
 }
 
@@ -105,5 +111,40 @@ footer {
   margin-top: 40px;
   color: #999;
   font-size: 0.9em;
+}
+
+/* Modo escuro */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.dark-mode h1 {
+  color: #f0f0f0;
+}
+
+.dark-mode p {
+  color: #ccc;
+}
+
+.dark-mode .social-links img {
+  filter: invert(1);
+}
+
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.toggle-button:hover {
+  background-color: #444;
 }
 </style>
